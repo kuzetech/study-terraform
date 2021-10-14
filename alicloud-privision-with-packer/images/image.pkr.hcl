@@ -1,4 +1,17 @@
+variable "access_key" {
+  type = string
+  default = "xxxxxx"
+}
 
+variable "secret_key" {
+  type = string
+  default = "xxxxx"
+}
+
+variable "region" {
+  type = string
+  default = "cn-hangzhou"
+}
 
 source "alicloud-ecs" "basic-example" {
       access_key = var.access_key
@@ -19,8 +32,8 @@ build {
 
   provisioner "shell" {
     inline = [
-      "echo "hsw" > /tmp/test1.txt", 
-      "echo "hsw" > /tmp/test2.txt"
+      "touch /tmp/test1.txt", 
+      "touch /tmp/test2.txt"
     ]
   }
 
