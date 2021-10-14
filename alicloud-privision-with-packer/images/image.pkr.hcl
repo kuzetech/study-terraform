@@ -1,6 +1,6 @@
 variable "access_key" {
   type = string
-  default = "xxxxxx"
+  default = "xxxxx"
 }
 
 variable "secret_key" {
@@ -32,14 +32,14 @@ build {
 
   provisioner "shell" {
     inline = [
-      "touch /tmp/test1.txt", 
-      "touch /tmp/test2.txt"
+      "echo 1 > /tmp/test1.txt", 
+      "echo 2 > /tmp/test2.txt"
     ]
   }
 
   provisioner "file" {
-    source      = "../ssh/tf-packer.pub"
-    destination = "/tmp/tf-packer.pub"
+    source      = "../ssh/id_rsa.pub"
+    destination = "/root/.ssh/authorized_keys"
   }
 
   provisioner "shell" {
