@@ -27,3 +27,4 @@ hs_err_pid*
 */terraform.*
 */var.tf
 */.terraform/
+env.txt
