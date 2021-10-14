@@ -1,11 +1,11 @@
 variable "access_key" {
   type = string
-  default = "xxxxx"
+  default = "xxxxxxx"
 }
 
 variable "secret_key" {
   type = string
-  default = "xxxxx"
+  default = "xxxxxxx"
 }
 
 variable "region" {
@@ -45,5 +45,6 @@ build {
   provisioner "shell" {
     script = "../scripts/setup.sh"
   }
+
 }
 
