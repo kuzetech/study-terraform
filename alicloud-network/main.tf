@@ -1,8 +1,4 @@
-provider "alicloud" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-  region     = "cn-hangzhou"
-}
+provider "alicloud" {}
 
 resource "alicloud_vpc" "vpc" {
   vpc_name       = "tf_test_foo"
