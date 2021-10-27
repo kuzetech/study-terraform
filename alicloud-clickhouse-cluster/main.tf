@@ -35,13 +35,13 @@ resource "alicloud_security_group_rule" "allow_all_tcp" {
 }
 
 module "master_instance" {
-  source          = "./../../modules/node"
+  source          = "./modules/node"
   for_each        = local.master_instances
   aliyun_instance = each.value
 }
 
 module "worker_instance" {
-  source          = "./../../modules/node"
+  source          = "./modules/node"
   for_each        = local.worker_instances
   aliyun_instance = each.value
 }
