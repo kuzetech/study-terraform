@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+chmod 600 /root/.ssh/authorized_keys
+
 # 安装 clickhouse
 sudo apt-get install apt-transport-https ca-certificates dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E0C56BD4
