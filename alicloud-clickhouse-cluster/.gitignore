@@ -1,9 +1,0 @@
-# Compiled class file
-
-./.terraform.*
-./.terraform/*
-./terraform.*
-
-examples/*/.terraform.*
-examples/*/.terraform/*
-examples/*/terraform.*

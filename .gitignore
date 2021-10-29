@@ -23,8 +23,9 @@
 hs_err_pid*
 
 
-*/.terraform.*
-*/terraform.*
+*/.terraform
+*/terraform.tfstate*
+*/.terraform.lock.hcl
+*/.terraform.tfstate.lock.info
 */var.tf
-*/.terraform/
 env.txt
