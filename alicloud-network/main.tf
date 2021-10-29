@@ -5,10 +5,14 @@ resource "alicloud_vpc" "vpc" {
   cidr_block = "172.16.0.0/12"
 }
 
+data "alicloud_zones" "zones_ds" {
+  available_instance_type = "ecs.xn4.small"
+}
+
 resource "alicloud_vswitch" "vsw" {
   vpc_id            = alicloud_vpc.vpc.id
   cidr_block        = "172.16.0.0/21"
-  zone_id = "cn-hangzhou-b"
+  zone_id = var.zone_id != "" ? var.zone_id : data.alicloud_zones.zones_ds.ids[0]
 }
 
 resource "alicloud_security_group" "default" {
