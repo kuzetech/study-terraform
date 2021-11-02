@@ -1,8 +1,4 @@
-provider "alicloud" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-  region     = "cn-hangzhou"
-}
+provider "alicloud" {}
 
 resource "alicloud_vpc" "vpc" {
   vpc_name       = "tf_test_foo"
@@ -38,6 +34,7 @@ resource "alicloud_instance" "instance" {
   system_disk_category = "cloud_efficiency"
   image_id             = "centos_7_06_64_20G_alibase_20190711.vhd"
   instance_name        = "test_foo"
+  key_name             = "test"
   vswitch_id = alicloud_vswitch.vsw.id
   internet_max_bandwidth_out = 1
 }
