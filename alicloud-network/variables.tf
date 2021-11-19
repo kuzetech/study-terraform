@@ -1,4 +1,4 @@
 variable "zone_id" {
   type = string
-  default     = "cn-hangzhou-b"
+  default     = "cn-hangzhou-i"
 }

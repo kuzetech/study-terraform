@@ -30,3 +30,8 @@ resource "alicloud_security_group_rule" "allow_all_tcp" {
   security_group_id = alicloud_security_group.default.id
   cidr_ip           = "0.0.0.0/0"
 }
+
+resource "alicloud_resource_manager_resource_group" "mrg" {
+  resource_group_name = "testrd"
+  display_name        = "testrd"
+}
